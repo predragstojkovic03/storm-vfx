@@ -1,0 +1,27 @@
+.image {
+    width: 750px;
+    object-fit: cover;
+}
+
+.text {
+    width: 720px;
+}
+
+.subHeading {
+    font-weight: 200;
+    margin-bottom: 16px;
+}
+
+.subHeading.dark {
+    color: #007FFF;
+}
+
+.light {
+    color: var(--dark-bg);
+    background: var(--white-smoke);
+}
+
+.dark {
+    color: white;
+    background: var(--dark-bg);
+}
