@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import video from '../../videos/hero_video_compressed.mp4';
 import styles from './Hero.module.css';
 
-const Hero = () => {
+const Hero = ({ scrollToAnimation }) => {
   return (
     <>
       <div className={styles.videoOverlay}></div>
@@ -51,6 +51,7 @@ const Hero = () => {
               transition: { delay: 0 },
             }}
             whileTap={{ scale: 0.9, transition: { delay: 0 } }}
+            onClick={scrollToAnimation}
             href='#animation-section'
             className={styles.btn}
           >

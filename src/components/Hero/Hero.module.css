@@ -8,7 +8,7 @@
 }
 
 .content {
-    width: 780px;
+    max-width: 780px;
 }
 
 .heading {
@@ -57,3 +57,18 @@
     transform: scale(1.5);
 }
 
+
+@media(max-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .heading {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}

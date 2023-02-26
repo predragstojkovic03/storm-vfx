@@ -1,11 +1,11 @@
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import React, { useRef } from 'react';
 
+import menuIcon from '../../svg/bars-solid.svg';
+import closeIcon from '../../svg/close.svg';
 import styles from './Navbar.module.css';
 
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import menuIcon from '../../svg/bars-solid.svg';
-
-const Navbar = () => {
+const Navbar = ({ menuOpen, setMenuOpen }) => {
   const { scrollY } = useScroll();
   const navbarRef = useRef();
 
@@ -27,17 +27,22 @@ const Navbar = () => {
       >
         Storm
       </motion.h2>
-      <motion.img
+      <motion.div
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         initial={{ opacity: 0, x: 100 }}
         transition={{
           duration: 1,
         }}
-        src={menuIcon}
-        alt='Menu icon'
-        className={styles.menuToggle}
-      />
+      >
+        <button
+          alt='Menu icon'
+          onClick={() => setMenuOpen(!menuOpen)}
+          className={styles.menuToggle}
+        >
+          <img src={menuOpen ? closeIcon : menuIcon} alt='Evo ti' />
+        </button>
+      </motion.div>
     </header>
   );
 };

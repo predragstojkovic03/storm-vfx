@@ -1,0 +1,41 @@
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 320px;
+    background: var(--dark-bg);
+    opacity: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.items {
+    list-style-type: none;
+}
+
+.item {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    text-align: center;
+    transition: 250ms ease all;
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+
+.linkItem {
+    background: transparent;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: white;
+}
+

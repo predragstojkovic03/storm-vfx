@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 
@@ -6,7 +7,12 @@ import styles from './Footer.module.css';
 const Footer = () => {
   return (
     <footer>
-      <div className={styles.content}>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+        viewport={{ once: true }}
+        className={styles.content}
+      >
         <h1 className={styles.logo}>
           <a href='/#/'>Storm</a>
         </h1>
@@ -28,7 +34,7 @@ const Footer = () => {
           &copy;
           {new Date().getFullYear()}
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 };
